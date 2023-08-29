@@ -15,7 +15,7 @@ spring:
   application:
     name: APPOINTMENT-SERVICE
   config:
-    import: configserver:${CONFIG_SERVER_URL:http://localhost:9296}
+    import: configserver:${CONFIG_SERVER_URL:http://3.108.41.230:9296}
 
 #eureka:
 #  client:
