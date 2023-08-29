@@ -124,6 +124,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>mediconnect-appointment-service</finalName>
 	</build>
 
 </project>
