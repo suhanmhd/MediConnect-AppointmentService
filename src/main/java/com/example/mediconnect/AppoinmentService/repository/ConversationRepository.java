@@ -18,6 +18,12 @@ Conversation findConversationByMembers(@Param("members") ArrayList<String> membe
     @Query("SELECT DISTINCT c FROM Conversation c JOIN c.members m WHERE m = :userId")
     List<Conversation> findDistinctByMembersContaining(@Param("userId") String userId);
 
+    @Query("SELECT c FROM Conversation c INNER JOIN c.members m WHERE m.memberName = :memberName")
+    List<Conversation> findConversationsByMemberName(String memberName);
+
+
+//    List<Conversation> findConversationsByMemberName(String senderName);
+
 //    List<Conversation> findByMembersContaining(String userId);
 }
 //    @Query("SELECT c FROM Conversation c WHERE :senderId MEMBER OF c.members AND :receiverId MEMBER OF c.members")

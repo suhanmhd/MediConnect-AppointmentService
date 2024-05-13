@@ -15,15 +15,25 @@ import java.util.UUID;
 @Builder
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Conversation extends BaseEntity{
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.AUTO, generator = "uuid2")
+//    @GenericGenerator(name = "uuid2", strategy = "uuid2")
+//    @Type(type = "org.hibernate.type.UUIDCharType")
+//    private UUID conversationId;
+//    @ElementCollection
+//    private List<String> members;
+
+
+
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
     @Type(type = "org.hibernate.type.UUIDCharType")
     private UUID conversationId;
-    @ElementCollection
-    private List<String> members;
 
-//     @OneToMany(mappedBy = "conversation", cascade = CascadeType.ALL)
-//     @ToString.Exclude
-//    private List<Message> messages;
+    @OneToMany(mappedBy = "conversation", cascade = CascadeType.ALL)
+    private List<ConversationMember> members;
+
 }
